@@ -81,7 +81,7 @@ export default {
               });
 
             if (currentUserName) {
-              this.imageUrl = this.imageUrl + `${currentUserName}?w=55`;
+              this.imageUrl = this.imageUrl + `${currentUserName}/55`;
               this.userName = GetCookie("SpUserName");
               this.auth = true;
               this.authtoken = GetCookie("AUTHTOKEN");
