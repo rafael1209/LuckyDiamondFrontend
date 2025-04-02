@@ -111,7 +111,7 @@ processMessage(message) {
         const dataObject = JSON.parse(dataFromServer);
 
         let imageUrl =
-          "https://avatars.spworlds.ru/face/" + dataObject.SpUserName+"?w=55"
+          "https://mc-heads.net/avatar/" + dataObject.SpUserName + "/55"
 
         const MsgUser = {
           id: this.id + 1,
@@ -121,7 +121,7 @@ processMessage(message) {
         };
 
         if (MsgUser.username === "🛠️ System") {
-          MsgUser.icon = "https://avatars.spworlds.ru/face/CONSOLE?w=55";
+          MsgUser.icon = "https://mc-heads.net/avatar/CONSOLE/55";
         }
 
         this.array.push(MsgUser);
@@ -137,7 +137,8 @@ processMessage(message) {
     if (response && response.length) {
       response.forEach((element) => {
         let imageUrl =
-          "https://avatars.spworlds.ru/face/" + element.userName + "?w=55";
+          // "https://avatars.spworlds.ru/face/" + element.userName + "?w=55"
+        "https://mc-heads.net/avatar/" + element.userName  + "/55";
 
         const processedMsg = this.processMessage(element.message); // Process the message
 
@@ -149,7 +150,7 @@ processMessage(message) {
         };
 
         if (MsgUser.username === "🛠️ System") {
-          MsgUser.icon = "https://avatars.spworlds.ru/face/CONSOLE?w=55";
+          MsgUser.icon = "https://mc-heads.net/avatar/CONSOLE/55";
         }
 
         this.array.push(MsgUser);

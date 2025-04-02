@@ -178,7 +178,7 @@ export default {
         .catch((error) => {
           console.error('error in profile, get money', error)
         })
-    this.imageUrl = `https://avatars.spworlds.ru/frontbust/${this.username}?w=256`
+    this.imageUrl = `https://mc-heads.net/avatar/${this.username}/256`
   },
   methods: {
     depositClick() {

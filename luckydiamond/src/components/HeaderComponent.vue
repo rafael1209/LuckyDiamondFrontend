@@ -35,7 +35,8 @@ export default {
       balance: 0,
       auth: false,
       authtoken: "",
-      imageUrl: "https://avatars.spworlds.ru/face/",
+      imageUrl: "https://mc-heads.net/avatar/",
+      // imageUrl: "https://avatars.spworlds.ru/face/",
       userName: "",
     };
   },
@@ -56,7 +57,7 @@ export default {
             SetCookie("AUTHTOKEN", response.authtoken);
             SetCookie("SearchToken", response.searchToken);
 
-            this.imageUrl = this.imageUrl + `${response.spUserName}?w=55`;
+            this.imageUrl = this.imageUrl + `${response.spUserName}/55`;
             this.userName = response.spUserName;
             this.auth = true;
             this.authtoken = response.authtoken;

@@ -325,7 +325,7 @@ export default {
       player: {
         name: "",
         gems: 100,
-        avatarUrl: "https://avatars.spworlds.ru/face/rafael1209?w=55",
+        avatarUrl: "https://mc-heads.net/avatar/hepatir/55",
         chance: "100%",
         // name: "FUpir",
         // gems: 500,
@@ -486,7 +486,8 @@ export default {
     updatePlayerInfo(newName, newGems, newChance) {
       this.player.name = newName;
       this.player.avatarUrl =
-        "https://avatars.spworlds.ru/face/" + newName + "?w=55";
+        "https://mc-heads.net/avatar/" + newName + "/55";
+        // "https://avatars.spworlds.ru/face/" + newName + "?w=55";
       this.player.gems = newGems;
       this.player.chance = parseFloat(newChance).toFixed(2) + "%";
     },
@@ -496,7 +497,8 @@ export default {
 
       inGamePlayersBided.forEach((player) => {
         this.users.push({
-          avatarUrl: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
+          avatarUrl: `https://mc-heads.net/avatar/${player.UserName}/55`, // Предполагаем структуру URL из имени пользователя
+          // avatarUrl: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
           name: player.UserName,
           chance: parseFloat(player.WinningPercentage).toFixed(2) + "",
           gems: player.Bid,
@@ -516,13 +518,13 @@ export default {
             //   this.firstStartOfPage = false;
             // } else {
             this.slides.push({
-              img: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
+              img: `https://mc-heads.net/avatar/${player.UserName}/55`, // Предполагаем структуру URL из имени пользователя
               nickname: player.UserName,
             });
             // }
           }
           this.slides.push({
-            img: `https://avatars.spworlds.ru/face/${player.UserName}?w=55`, // Предполагаем структуру URL из имени пользователя
+            img: `https://mc-heads.net/avatar/${player.UserName}/55`, // Предполагаем структуру URL из имени пользователя
             nickname: player.UserName,
           });
         }
@@ -661,7 +663,7 @@ export default {
       this.timerInterval = null;
     },
     changeLastFiveImages() {
-      const newImage = "https://avatars.spworlds.ru/face/rafael1209?w=55";
+      const newImage = "https://mc-heads.net/avatar/hepatir/55";
       this.slides[9].img = newImage;
     },
     stopOnTarget(targetNickname) {
