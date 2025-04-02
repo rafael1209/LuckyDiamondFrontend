@@ -1,6 +1,6 @@
 export const BackendApiUrl  = 'https://casino.chasman.engineer/api';
 
-export const BackendWebSocketUrl  = 'wss://casino.chasman.engineer';
+export const BackendWebSocketUrl  = 'wss://casino.chasman.engineer/ws';
 
 export const BackendWebSocketJackpotUrl  = 'wss://casino.chasman.engineer/jackpot';
  
