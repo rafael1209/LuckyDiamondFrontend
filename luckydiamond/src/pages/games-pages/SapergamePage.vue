@@ -474,12 +474,12 @@ export default {
     }
   },
   mounted() {
-    eventBus.on('Updatebalance-saper', () => {
-      GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
-          .then(response => {
-            this.balance = response.currentMoney
-          })
-    })
+    // eventBus.on('Updatebalance-saper', () => {
+    //   GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+    //       .then(response => {
+    //         this.balance = response.currentMoney
+    //       })
+    // })
   },
   methods: {
     clickPlayButton() {
