@@ -1,8 +1,11 @@
 <template>
   <div class="content-grid--saper">
     <aside-bar-element></aside-bar-element>
+
     <header-element-page></header-element-page>
+
     <chat-component></chat-component>
+
     <section class="saper" :class="{ 'game-end' : ValidationPlay.endGame }">
       <div class="bg"></div>
       <div class="bg-two"></div>
@@ -11,11 +14,13 @@
           <div class="classMenegerSaper">
             <h2>Сапёр</h2>
             <div class="classNoMenegerSaper">
-              <a href="https://docs.google.com/document/d/1aoN7tqLxWxOBJ-NXUs4GHK8Nl2n2Q-Kw6JHzmujku6A" target="_blank">
-                <img src="@/assets/icons-games/double-game/info.svg" alt="" />
-              </a>
-            </div>
+            <a href="https://docs.google.com/document/d/1aoN7tqLxWxOBJ-NXUs4GHK8Nl2n2Q-Kw6JHzmujku6A" target="_blank">
+              <img src="@/assets/icons-games/double-game/info.svg" alt="" />
+           </a>
           </div>
+
+          </div>
+
           <p>Находи изумруды на поле и избегай кристалы</p>
           <div class="saper-start__choises crystals">
             <h3>Количество кристалов</h3>
@@ -24,9 +29,7 @@
               <input v-model="amountCrystals" type="number">
               <ul class="crystals-btns__display">
                 <li v-for="(item, index) in SaperNumbers" :key="index">
-                  <button @click="clickedBtnCrystals(index, item.crystals)" :class="{ 'btn-click': clickedBtnCrystal === index, [index]: clickedBtnCrystal === index }" :id="item.crystals === 'max' ? 'max-button' : null" v-if="item.crystals !== undefined">
-                    {{ item.crystals }}
-                  </button>
+                  <button @click="clickedBtnCrystals(index, item.crystals)" :class="{ 'btn-click': clickedBtnCrystal === index, [index]: clickedBtnCrystal === index }" :id="item.crystals === 'max' ? 'max-button' : null" v-if="item.crystals !== undefined">{{ item.crystals }}</button>
                 </li>
               </ul>
             </div>
@@ -39,9 +42,7 @@
               <div class="diamonds__btns btn-style__diamonds">
                 <ul class="diamonds-btns__display">
                   <li v-for="(item, index) in SaperNumbers" :key="index">
-                    <button @click="clickedBtnChoice(index, item.diamonds)" :class="{ 'btn-click': clickedBtn === index, [index]: clickedBtn === index }" :id="item.diamonds === 'max' ? 'max-button' : null" v-if="item.diamonds !== undefined">
-                      {{ item.diamonds }}
-                    </button>
+                    <button @click="clickedBtnChoice(index, item.diamonds)" :class="{ 'btn-click': clickedBtn === index, [index]: clickedBtn === index }" :id="item.diamonds === 'max' ? 'max-button' : null" v-if="item.diamonds !== undefined">{{ item.diamonds }}</button>
                   </li>
                 </ul>
               </div>
@@ -141,7 +142,7 @@
                   <p>Открывай ячейки с изумрудами</p>
                   <img src="@/assets/icons-games/saper-game/icon-emeralds-saper.svg" width="170" height="170">
                   <div class="info-crystals__count card-style-count emeralds-bg" :class="{ 'on-element-card' : gameStart === true }">
-                    <h3>{{ emeraldsAmount }}</h3>
+                    <h3>{{ this.emeraldsAmount }}</h3>
                   </div>
                 </div>
               </div>
@@ -151,7 +152,7 @@
                   <p>Остерегайся кристаллов, чтобы не проиграть</p>
                   <img src="@/assets/icons-games/saper-game/icon-crystall-info-saper.svg" width="170" height="170">
                   <div class="info-crystals__count card-style-count crystals-bg" :class="{ 'on-element-card' : gameStart === true }">
-                    <h3>{{ amountCrystals }}</h3>
+                    <h3>{{ this.amountCrystals }}</h3>
                   </div>
                 </div>
               </div>
@@ -179,35 +180,40 @@ import HeaderElementPage from "@/components/HeaderComponent.vue";
 import { GetPercentageSteps, GetUserData, ClickCirclePlay, GetWinningAmount } from "@/assets/js/games/saper/SaperAPI";
 import { GetCurrentMoney } from "@/assets/js/rest/RestMethods";
 import { GetCookie } from "@/assets/js/storage/CookieStorage";
-import { GetFromLocalStorage } from "@/assets/js/storage/LocalStorage";
-import { Howl } from "howler";
-import { eventBus } from "@/main";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
+import {GetFromLocalStorage} from "@/assets/js/storage/LocalStorage";
+
+
+import { Howl } from 'howler';
+import {eventBus} from "@/main";
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 import "swiper/css/navigation";
-import SwiperCore from "swiper/core";
-import { Navigation } from "swiper/modules";
-import { useVuelidate } from "@vuelidate/core";
+import SwiperCore from 'swiper/core';
+import {Navigation } from "swiper/modules";
+
+import { useVuelidate } from '@vuelidate/core'
 import { maxValue, minValue, required, numeric, integer } from "@vuelidate/validators";
-import "@/assets/css/PagesStyles/games-pages/saper.css";
-import SaperNumbers from "@/mocks/SaperNumbers";
 
 SwiperCore.use([Navigation]);
 
+import '@/assets/css/PagesStyles/games-pages/saper.css'
+import SaperNumbers from "@/mocks/SaperNumbers";
+
 export default {
-  components: { ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
+  components: {ChatComponent, HeaderElementPage, AsideBarElement, Swiper, SwiperSlide },
   data() {
     return {
       SaperNumbers,
-      clickedBtn: "",
-      clickedBtnCrystal: "",
+      clickedBtn: '',
+      clickedBtnCrystal : '',
       amountCrystals: 0,
       emeraldsAmount: 0,
       balance: 0,
       winningAmount: 0,
       gamesCircle: 0,
       gameTurn: 0,
-      ErrorClick: "",
+      ErrorClick: '',
       gameStart: false,
       offEventPointers: false,
       amountDeposit: 0,
@@ -220,63 +226,90 @@ export default {
         endGame: false,
         winGame: false,
       },
-      modules: [Navigation],
-      isClaiming: false,
-      isProcessingClick: false,
-    };
+      modules: [ Navigation ]
+    }
   },
-  setup() {
-    return { v$: useVuelidate() };
+  setup () {
+    return{ v$: useVuelidate() }
   },
   validations() {
     return {
       amountCrystals: { required, numeric, minValue: minValue(1), maxValue: maxValue(24), integer },
-      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer },
-    };
+      amountDeposit: { required, numeric, minValue: minValue(1), maxValue: maxValue(this.balance), integer }
+    }
   },
   watch: {
     amountDeposit(DepositCount) {
       if (![1, 5, 10, 50, 100, parseInt(this.balance)].includes(DepositCount)) {
-        this.clickedBtn = null;
-      } else {
-        let index;
+        this.clickedBtn = null
+      }
+      else {
+        let index
         switch (DepositCount) {
           case 1:
-            index = parseInt(this.balance) === DepositCount ? 5 : 0;
-            break;
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 0
+            }
+            break
           case 5:
-            index = parseInt(this.balance) === DepositCount ? 5 : 1;
-            break;
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 1
+            }
+            break
           case 10:
-            index = parseInt(this.balance) === DepositCount ? 5 : 2;
-            break;
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 2
+            }
+            break
           case 50:
-            index = parseInt(this.balance) === DepositCount ? 5 : 3;
-            break;
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 3
+            }
+            break
           case 100:
-            index = parseInt(this.balance) === DepositCount ? 5 : 4;
-            break;
+            if (parseInt(this.balance) === DepositCount) {
+              index = 5
+            }
+            else {
+              index = 4
+            }
+            break
           case parseInt(this.balance):
-            index = 5;
-            break;
+            index = 5
+            break
         }
-        this.clickedBtnChoice(index, DepositCount);
+
+        this.clickedBtnChoice(index, DepositCount)
       }
     },
     async amountCrystals(CrystalsCount) {
       this.PercentageGameSteps = [];
+
       if (CrystalsCount >= 1 && CrystalsCount <= 24) {
         try {
           const response = await GetPercentageSteps(CrystalsCount);
           response.forEach((item) => {
-            if (item !== "Infinity" && item !== "-Infinity") {
+            if (item !== 'Infinity' && item !== '-Infinity') {
               this.PercentageGameSteps.push(Number(item));
             }
           });
         } catch (e) {
-          // console.error('Error in Percentage', e);
+          //console.error('Error in Percentage', e);
         }
       }
+
       let index;
       switch (CrystalsCount) {
         case 1:
@@ -292,245 +325,286 @@ export default {
           index = 3;
           break;
         default:
-          return;
+          return
       }
       this.clickedBtnCrystals(index, CrystalsCount);
     },
+
     flippedCards: {
-      async handler(value) {
-        if (value.length < 1 || this.ValidationPlay.endGame === true) return;
-        if (this.isProcessingClick) return;
-        this.isProcessingClick = true;
-        try {
-          const maxCircles = 25 - this.amountCrystals - this.gameTurn;
-          if (this.gameStart !== false) {
-            this.offEventPointers = false;
-            let AnswerServer;
-            let DepositDiamonds = this.amountDeposit;
-            const X_Cordinates = value[this.gamesCircle];
-            let findIndex, findX, findY;
-            if (X_Cordinates > 5) {
-              findIndex = Math.ceil(X_Cordinates / 5) * 5;
-              findY = Math.ceil(findIndex / 5) - 1;
-              findX = X_Cordinates - findIndex + 4;
-            } else if (X_Cordinates <= 5) {
-              findX = X_Cordinates - 1;
-              findY = 0;
-            }
-            const UserObject = {
-              PuttedMoney: DepositDiamonds,
-              MinesCount: this.amountCrystals,
-              SearchToken: GetCookie("SearchToken"),
-              AUTHTOKEN: GetCookie("AUTHTOKEN"),
-            };
-            const ClickedSquare = { X: findX, Y: findY };
-            try {
-              await ClickCirclePlay(UserObject, ClickedSquare).then((response) => {
-                AnswerServer = response;
-                this.winningAmount = response.Item1.WinningMoney;
-              });
-            } catch (e) {
-              // console.error(e)
-            }
-            this.gamesCircle = this.gamesCircle + 1;
-            this.offEventPointers = true;
-            if (AnswerServer === "You dead") {
-              this.unCorrectClick.push(X_Cordinates);
-              this.offEventPointers = false;
-              this.gameStart = false;
-              this.gamesCircle = 0;
-              this.winningAmount = 0;
-              this.gameTurn = 0;
-              const SoundCorrect = new Howl({
-                src: ["/sounds/incorrect-sound.mp3"],
-                volume: GetFromLocalStorage("volume") / 100,
-              });
-              SoundCorrect.play();
-              this.ValidationPlay.endGame = true;
-              setTimeout(() => {
-                this.ValidationPlay.endGame = false;
-              }, 1200);
-              eventBus.emit("Updatebalance");
-              return;
-            }
-            const SoundUncorrect = new Howl({
-              src: ["/sounds/correct-click.mp3"],
-              volume: GetFromLocalStorage("volume") / 100,
-            });
-            this.CorrectsClick.push(X_Cordinates);
-            SoundUncorrect.play();
-            this.emeraldsAmount--;
-          }
-          if (this.gamesCircle === maxCircles) {
-            this.offEventPointers = false;
-            this.gameStart = false;
-            this.gamesCircle = 0;
-            this.gameTurn = 0;
-            await this.claimWinningAmount();
-            this.ValidationPlay.winGame = true;
-            setTimeout(() => {
-              this.ValidationPlay.winGame = false;
-            }, 1500);
-          }
-        } finally {
-          this.isProcessingClick = false;
-        }
+     async handler(value) {
+       if (value.length < 1 || this.ValidationPlay.endGame === true) return
+       const maxCircles = 25 - this.amountCrystals - this.gameTurn
+
+       if (this.gameStart !== false) {
+         this.offEventPointers = false
+         let AnswerServer
+
+         //let LimitClicked = this.amountCrystals
+         let DepositDiamonds = this.amountDeposit
+
+         const X_Cordinates = value[this.gamesCircle]
+         let findIndex, findX, findY
+
+         if (X_Cordinates > 5) {
+           findIndex = Math.ceil(X_Cordinates / 5) * 5
+           findY = Math.ceil(findIndex / 5) - 1
+           findX = X_Cordinates - findIndex + 4
+         }
+         else if (X_Cordinates <= 5) {
+           findX = X_Cordinates - 1
+           findY = 0
+         }
+
+         const UserObject = {
+           PuttedMoney: DepositDiamonds,
+           MinesCount: this.amountCrystals,
+           SearchToken: GetCookie('SearchToken'),
+           AUTHTOKEN: GetCookie('AUTHTOKEN')
+         }
+         const ClickedSquare = {
+           X: findX,
+           Y: findY
+         }
+
+         try {
+           await ClickCirclePlay(UserObject, ClickedSquare)
+               .then(response => {
+                 AnswerServer = response
+                 this.winningAmount = response.Item1.WinningMoney
+               })
+         }
+         catch (e) {
+           //console.error(e)
+         }
+
+         //console.log(LimitClicked, DepositDiamonds, X_Cordinates)
+         this.gamesCircle = this.gamesCircle + 1
+         this.offEventPointers = true
+         if (AnswerServer === 'You dead') {
+           this.unCorrectClick.push(X_Cordinates)
+           this.offEventPointers = false
+           this.gameStart = false
+           this.gamesCircle = 0
+           this.winningAmount = 0
+           this.gameTurn = 0
+           const SoundCorrect = new Howl({
+             src: ['/sounds/incorrect-sound.mp3'],
+             volume: GetFromLocalStorage("volume")/100
+            //  volume: 0.5
+           })
+
+           SoundCorrect.play()
+
+           this.ValidationPlay.endGame = true
+           setTimeout(() => {
+             this.ValidationPlay.endGame = false
+           }, 1200)
+           return eventBus.emit('Updatebalance')
+         }
+         const SoundUncorrect = new Howl({
+           src: ['/sounds/correct-click.mp3'],
+          //  volume: 0.5
+           volume: GetFromLocalStorage("volume")/100
+         })
+         this.CorrectsClick.push(X_Cordinates)
+
+         SoundUncorrect.play()
+         this.emeraldsAmount--
+       }
+       if (this.gamesCircle === maxCircles) {
+         this.offEventPointers = false
+         this.gameStart = false
+         this.gamesCircle = 0
+         this.gameTurn = 0
+
+         this.claimWinningAmount()
+
+         this.ValidationPlay.winGame = true
+
+         setTimeout(() => {
+           this.ValidationPlay.winGame = false
+         }, 1500)
+       }
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
-  created() {
-    const AUTHTOKEN = GetCookie("AUTHTOKEN");
-    const SEARCHTOKEN = GetCookie("SearchToken");
+   created() {
+    const AUTHTOKEN = GetCookie('AUTHTOKEN')
+    const SEARCHTOKEN = GetCookie('SearchToken')
+
     if (AUTHTOKEN !== null && SEARCHTOKEN !== null) {
       try {
-        GetUserData(AUTHTOKEN, SEARCHTOKEN).then((response) => {
-          if (response) {
-            this.gameStart = true;
-            this.offEventPointers = true;
-            this.ValidationPlay.startGame = true;
-            this.amountCrystals = response.MinesCount;
-            this.amountDeposit = response.PuttedMoney;
-            this.winningAmount = response.WinningMoney;
-            this.emeraldsAmount = 25 - this.amountCrystals - response.CurrentUserTurn;
-            this.gameTurn = response.CurrentUserTurn;
-            const soundStartGame = new Howl({
-              src: ["/sounds/start-game.mp3"],
-              volume: GetFromLocalStorage("volume") / 25,
-            });
-            soundStartGame.play();
-            setTimeout(() => {
-              this.ValidationPlay.startGame = false;
-            }, 2000);
-          } else {
-            this.amountCrystals = 5;
-          }
-        });
-        this.getBalanceUser();
-      } catch (e) {
-        // console.error('Error in GetData', e);
+         GetUserData(AUTHTOKEN, SEARCHTOKEN)
+            .then(response => {
+              if (response) {
+                this.gameStart = true
+                this.offEventPointers = true
+
+                this.ValidationPlay.startGame = true
+
+                this.amountCrystals = response.MinesCount
+                this.amountDeposit = response.PuttedMoney
+                this.winningAmount = response.WinningMoney
+                this.emeraldsAmount = 25 - this.amountCrystals - response.CurrentUserTurn
+                this.gameTurn = response.CurrentUserTurn
+
+                const soundStartGame = new Howl({
+                  src: ['/sounds/start-game.mp3'],
+                  volume: GetFromLocalStorage("volume")/25
+                })
+
+                soundStartGame.play()
+                setTimeout(() => {
+                  this.ValidationPlay.startGame = false
+                }, 2000)
+              }
+              else {
+                this.amountCrystals = 5
+              }
+            })
+        this.getBalanceUser()
       }
-    } else {
-      this.amountCrystals = 5;
+      catch (e) {
+        //console.error('Error in GetData', e)
+      }
+    }
+    else {
+      this.amountCrystals = 5
     }
   },
   mounted() {
-    // Можно добавить обработчики через eventBus, но если они используются, не забудьте отписываться при уничтожении компонента.
+    // eventBus.on('Updatebalance-saper', () => {
+    //   GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken"))
+    //       .then(response => {
+    //         this.balance = response.currentMoney
+    //       })
+    // })
   },
   methods: {
     clickPlayButton() {
-      this.v$.$touch();
+      this.v$.$touch()
+
       if (this.v$.amountDeposit.$error) {
-        this.errorPlayButton();
+        this.errorPlayButton()
       }
       if (this.v$.amountCrystals.$error) {
-        this.errorPlayButton();
+        this.errorPlayButton()
       }
       if (!this.v$.amountCrystals.$error && !this.v$.amountDeposit.$error) {
-        this.flippedCards = [];
-        this.unCorrectClick = [];
-        this.CorrectsClick = [];
-        this.playNotification();
-        this.gameStart = true;
-        this.offEventPointers = true;
+        this.flippedCards = []
+        this.unCorrectClick = []
+        this.CorrectsClick = []
+        this.playNotification()
+        this.gameStart = true
+        this.offEventPointers = true
         const soundStartGame = new Howl({
-          src: ["/sounds/start-game.mp3"],
-          volume: GetFromLocalStorage("volume") / 100,
-        });
-        soundStartGame.play();
-        this.emeraldsAmount = 25 - this.amountCrystals;
+          src: ['/sounds/start-game.mp3'],
+          volume: GetFromLocalStorage("volume")/100
+          // volume: 5.0
+        })
+
+        soundStartGame.play()
+        this.emeraldsAmount = 25 - this.amountCrystals
       }
     },
     getBalanceUser() {
       try {
-        GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then((response) => {
-          this.balance = response.currentMoney;
-        });
-      } catch (e) {
-        // console.error(e)
+        GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+            .then(response => {
+              this.balance = response.currentMoney
+            })
+      }
+      catch (e) {
+        //console.error(e)
       }
     },
     async claimWinningAmount() {
       if (this.winningAmount >= 1) {
-        if (this.isClaiming) return;
-        this.isClaiming = true;
         try {
-          this.offEventPointers = false;
-          this.gameStart = false;
-          this.gamesCircle = 0;
-          this.gameTurn = 0;
-          await GetWinningAmount({ SearchToken: GetCookie("SearchToken"), AuthToken: GetCookie("AUTHTOKEN") });
-          this.winningAmount = 0;
-          this.ValidationPlay.winGame = true;
+          this.offEventPointers = false
+          this.gameStart = false
+          this.gamesCircle = 0
+          this.gameTurn = 0
+          await GetWinningAmount({ SearchToken: GetCookie('SearchToken'), AuthToken: GetCookie('AUTHTOKEN') })
+          this.winningAmount = 0
+
+          this.ValidationPlay.winGame = true
           setTimeout(() => {
-            this.ValidationPlay.winGame = false;
-          }, 1500);
-          eventBus.emit("Updatebalance");
-        } catch (e) {
-          // console.error(e)
-        } finally {
-          this.isClaiming = false;
+            this.ValidationPlay.winGame = false
+          }, 1500)
+
+          return eventBus.emit('Updatebalance')
+        }
+        catch (e) {
+          //console.error(e)
         }
       }
     },
     playNotification() {
-      this.ValidationPlay.startGame = true;
+      this.ValidationPlay.startGame = true
       setTimeout(() => {
-        this.ValidationPlay.startGame = false;
-      }, 1500);
+        this.ValidationPlay.startGame = false
+      }, 1500)
     },
     errorPlayButton() {
-      this.ErrorClick = true;
+      this.ErrorClick = true
       setTimeout(() => {
-        this.ErrorClick = false;
-      }, 2000);
+        this.ErrorClick = false
+      }, 2000)
     },
     flipCard(index) {
       if (this.flippedCards.includes(index)) {
-        return eventBus.emit("Updatebalance");
+        return eventBus.emit('Updatebalance')
       } else {
         this.flippedCards.push(index);
       }
     },
     stepsEndOfWord(index) {
-      const indexString = String(index);
-      let lastNumber = indexString;
+      const indexString = String(index)
+      let lastNumber = indexString
       if (indexString >= 10) {
-        lastNumber = indexString.slice(1);
+        lastNumber = indexString.slice(1)
       }
-      return this.checkLastNumber(lastNumber);
+      return this.checkLastNumber(lastNumber)
     },
     checkLastNumber(number) {
-      let word = "";
-      if (number === "1") {
-        word = "шаг";
-      } else if (["2", "3", "4"].includes(number)) {
-        word = "шага";
-      } else {
-        word = "шагов";
+      let word = ''
+      if (number === '1') {
+        word = 'шаг'
       }
-      return word;
+      else if (['2', '3', '4'].includes(number)) {
+        word = 'шага'
+      }
+      else {
+        word = 'шагов'
+      }
+      return word
     },
     async clickedBtnChoice(index, content) {
-      this.clickedBtn = index;
-      if (content === "max") {
-        await GetCurrentMoney(GetCookie("AUTHTOKEN"), GetCookie("SearchToken")).then((response) => {
-          const responseBalance = response.currentMoney;
-          if (responseBalance === this.balance) {
-            this.amountDeposit = parseInt(responseBalance);
-          }
-        });
-      } else {
-        this.amountDeposit = content;
+      this.clickedBtn = index
+      if (content === 'max') {
+        await GetCurrentMoney(GetCookie('AUTHTOKEN'), GetCookie('SearchToken'))
+            .then((response) => {
+              const responseBalance = response.currentMoney
+
+              if (responseBalance === this.balance) {
+                this.amountDeposit = parseInt(responseBalance)
+              }
+            })
+      }
+      else {
+        this.amountDeposit = content
       }
     },
     clickedBtnCrystals(index, content) {
-      this.clickedBtnCrystal = index;
-      this.amountCrystals = content;
+      this.clickedBtnCrystal = index
+      this.amountCrystals = content
     },
   },
-};
+}
 </script>
 
 <style scoped>
+
 </style>
