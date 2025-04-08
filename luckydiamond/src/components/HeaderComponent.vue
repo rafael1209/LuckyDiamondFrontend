@@ -41,9 +41,10 @@ export default {
     };
   },
   mounted() {
-    eventBus.on("Updatebalance", () => {
-      this.updateBalanceMethod();
-    });
+    eventBus.on("Updatebalance",this.updateBalanceMethod);
+  },
+  unmounted() {
+    eventBus.off("Updatebalance", this.updateBalanceMethod);
   },
   created() {
     try {
