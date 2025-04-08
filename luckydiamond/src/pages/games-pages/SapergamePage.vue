@@ -534,7 +534,8 @@ export default {
             this.ValidationPlay.winGame = false
           }, 1500)
 
-          return eventBus.emit('Updatebalance')
+
+          // return eventBus.emit('Updatebalance')
         }
         catch (e) {
           //console.error(e)
