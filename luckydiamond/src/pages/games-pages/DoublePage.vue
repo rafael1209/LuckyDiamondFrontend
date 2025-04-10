@@ -178,7 +178,7 @@
               <div class="col-md-4" style="padding-left: 0px">
                 <div class="double-members-ingame-green">
                   <div class="double-members-flex-container">
-                    <div class="double-green-box">GREEN X15</div>
+                    <div class="double-green-box">GREEN X5</div>
                     <div class="double-user-icon">
                       <span class="double-user-icon-span"></span>
                       <span class="double-number-color">{{
