@@ -34,7 +34,7 @@
               :class="{ active: activeButton === 'green' }"
               @click="handleClick('green')"
             >
-              x15
+              x5
             </button>
             <button
               class="bet-button black"
