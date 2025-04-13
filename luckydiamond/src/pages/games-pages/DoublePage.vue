@@ -349,10 +349,6 @@ export default {
 
           return;
         }
-
-        if (!response.ok) {
-          alert("Пожалуйста подождите");
-        }
       });
       this.offBtn = false;
     },
