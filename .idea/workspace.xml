@@ -5,17 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ebde16-c441-41b1-8699-e40a95a5586d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/luckydiamond/src/assets/js/Profile/Referrals.js" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/assets/js/Profile/Referrals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luckydiamond/src/components/HeaderComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/components/HeaderComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luckydiamond/src/pages/ProfilePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/pages/ProfilePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/luckydiamond/src/properties/Сonfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/properties/Сonfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/luckydiamond/src/pages/games-pages/DoublePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/pages/games-pages/DoublePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2vh4bt65UJTMuqL1szNl1uTwZBn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Rafael Chasman/Documents/GitHub/LuckyDiamondFrontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1ebde16-c441-41b1-8699-e40a95a5586d" name="Changes" comment="" />
+      <created>1744584049405</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744584049405</updated>
+      <workItem from="1744584049409" duration="1511000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

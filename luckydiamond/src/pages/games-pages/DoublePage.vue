@@ -324,8 +324,14 @@ export default {
         this.balance < this.amountDeposit ||
         !Number.isInteger(Number(this.amountDeposit))
       ) {
-        this.textError = "Некорректное значение. Введите целое число.";
+        alert("Некорректное значение. Введите целое число.");
         this.offBtn = false;
+      }
+
+      if (this.amountDeposit > 1000) {
+        alert("Максимальная ставка — 1000 AR.");
+        this.offBtn = false;
+        return;
       }
 
       await JoinGame(this.amountDeposit, this.clickedColor).then((response) => {
@@ -336,16 +342,16 @@ export default {
           this.offBtn = false;
 
           if (response === `You can't join to started or ended game`) {
-            this.textError = "Игра уже началась или только закончилась!";
+            alert("Игра уже началась или только закончилась!");
           } else if (response === "Player alredy in the game.") {
-            this.textError = "Вы уже в игре!";
+            alert("Вы уже в игре!");
           }
 
           return;
         }
 
         if (!response.ok) {
-          this.textError = "Пожалуйста подождите";
+          alert("Пожалуйста подождите");
         }
       });
       this.offBtn = false;
@@ -357,7 +363,7 @@ export default {
         required,
         numeric,
         minValue: minValue(1),
-        maxValue: maxValue(this.balance),
+        maxValue: maxValue(1000),
         integer,
       },
     };
