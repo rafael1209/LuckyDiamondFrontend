@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ebde16-c441-41b1-8699-e40a95a5586d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/luckydiamond/public/untitl34553333e33343333333333ed 1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/luckydiamond/src/components/DevelopComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/luckydiamond/src/components/DevelopComponent.vue" afterDir="false" />
     </list>
@@ -65,7 +64,7 @@
       <workItem from="1744611586660" duration="168000" />
       <workItem from="1744707082080" duration="3030000" />
       <workItem from="1744729339484" duration="36000" />
-      <workItem from="1744901821122" duration="585000" />
+      <workItem from="1744901821122" duration="1680000" />
     </task>
     <servers />
   </component>
