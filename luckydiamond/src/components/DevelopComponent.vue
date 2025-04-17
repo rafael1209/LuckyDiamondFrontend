@@ -1,175 +1,38 @@
 <template>
   <div class="info">
     <div class="top_card">
-    <div class="Rafael1209_card">
-      <div class="Rafael1209_text_2">
-        <div class="Rafael1209_aboutinfo_2">
-          <p>Бэкендер</p>
-          <h1>Rafael1209</h1>
-        </div>
-        <div class="Rafael1209_whatjob_2">
-          <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="html">
-          <p>ASP, .NET, MongoDB</p>
-        </div>
-        <div class="Rafael1209_whatjob2_2">
-          <img src="@/assets/icons-developcard/Figma.png" alt="html">
-          <p>Designer</p>
-        </div>
-        </div>
-        <div class="Rafael1209_skin_2">
-          <div class="Rafael1209_skin_2_skin">
-            
-            <div class="Rafael1209_skinicons1">
-            <a href="https://t.me/RafaelloChas" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="https://discordapp.com/users/773259384095768657" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="https://github.com/rafael1209" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
-            </div>
+      <div class="Gobnik_card" style="border: 3px solid gold; box-shadow: 0 0 25px gold; padding: 20px; border-radius: 20px; background: #111;">
+        <div class="Gobnik_text_2" style="color: white;">
+          <div class="Gobnik_aboutinfo_2" style="margin-bottom: 20px;">
+            <p style="font-size: 20px; color: gold;">👑 ГЛАВА ВСЕГО | ЛЕГЕНДА | БОГ КОДА</p>
+            <h1 style="font-size: 48px; font-weight: bold; background: linear-gradient(to right, gold, orange); -webkit-background-clip: text; color: transparent;">1_gobnik</h1>
+          </div>
+          <div class="Gobnik_whatjob_1" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="C#" style="width: 24px;">
+            <p>Повелитель .NET, властелин бэкенда</p>
+          </div>
+          <div class="Gobnik_whatjob_2" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <img src="@/assets/icons-developcard/sql-logo.png" alt="SQL" style="width: 24px;">
+            <p>Маэстро SQL-запросов</p>
+          </div>
+          <div class="Gobnik_whatjob_3" style="display: flex; align-items: center; gap: 10px;">
+            <img src="@/assets/icons-developcard/tech-support.svg" alt="Support" style="width: 24px;">
+            <p>Наставник всех, кто вообще что-то пишет</p>
           </div>
         </div>
-    </div>
-    <div class="Hepatir_card">
-      <div class="text_2">
-        <div class="aboutinfo_2">
-          <p>Бэкендер</p>
-          <h1>Hepatir</h1>
-        </div>
-        <div class="whatjob_2">
-          <img src="@/assets/icons-developcard/Logo_C_sharp.png" alt="html">
-          <p>ASP, .NET, MongoDB</p>
-        </div>
-        <div class="whatjob2_2">
-          <img src="@/assets/icons-developcard/sql-logo.png" alt="html">
-          <p>SQL</p>
-        </div>
-        </div>
-        <div class="skin_2">
-          <div class="skin_2_skin">
-            <div class="skinicons1">
-            <a href="https://t.me/Hepatacor" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="https://discordapp.com/users/293977705815343105" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="https://github.com/danilt2000/" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
+        <div class="Gobnik_skin_2" style="margin-top: 20px;">
+          <div class="Gobnik_skin_2_skin" style="text-align: center;">
+            <img src="../../public/untitl34553333e33343333333333ed 1.png" alt="1_gobnik" style="border-radius: 50%; border: 2px solid gold; width: 300px;">
+            <div class="Gobnik_skinicons1" style="margin-top: 10px; display: flex; justify-content: center; gap: 15px;">
+              <a href="https://t.me/1_gobnik" target="_blank"><img src="@/assets/icons-developcard/telegram.png" alt="Telegram" style="width: 32px;"></a>
+              <a href="https://discord.com/users/123456789" target="_blank"><img src="@/assets/icons-developcard/discord.png" alt="Discord" style="width: 32px;"></a>
+              <a href="https://github.com/1gobnik" target="_blank"><img src="@/assets/icons-developcard/github.png" alt="GitHub" style="width: 32px;"></a>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="Ckutls__card">
-      <div class="Ckutls__text_2">
-        <div class="Ckutls__aboutinfo_2">
-          <p>Фронтэндер</p>
-          <h1>Ckutls_</h1>
-        </div>
-        <div class="Ckutls__whatjob_1">
-          <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5, CSS</p>
-        </div>
-        <div class="Ckutls__whatjob_2">
-          <img src="@/assets/icons-developcard/js.png" alt="html">
-          <p>JavaScript</p>
-        </div>
-        <div class="Ckutls__whatjob_3">
-          <img src="@/assets/icons-developcard/Vue.png" alt="html">
-          <p>Vue 3</p>
-        </div>
-        </div>
-        <div class="Ckutls__skin_2">
-          <div class="Ckutls__skin_2_skin">
-            
-            <div class="Ckutls__skinicons1">
-            <a href="https://t.me/Ckutls" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="https://discordapp.com/users/531420425255911424" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-            <a href="https://github.com/CkutlsGit" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
-            </div>
-          </div>
-        </div>
-      
-    </div>
-    <div class="FUpir_card">
-      <div class="FUpir_text_2">
-        <div class="FUpir_aboutinfo_2">
-          <p>Дизайнер</p>
-          <h1>FUpir</h1>
-        </div>
-        <div class="FUpir_whatjob_1">
-          <img src="@/assets/icons-developcard/Figma.png" alt="html">
-          <p>Designer</p>
-        </div>
-        </div>
-        <div class="FUpir_skin_2">
-          <div class="FUpir_skin_2_skin">
-            
-            <div class="FUpir_skinicons1">
-            <a href="https://t.me/Ykropmaha" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-            <a href="https://discordapp.com/users/1126752682183503942" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-           
-            </div>
-          </div>
-        </div>
-      
-    </div>
-  </div>
-  <div class="bottom_card">
-    <div class="GEDPOOL31_card">
-      <div class="GEDPOOL31_text">
-        <div class="GEDPOOL31_aboutinfo">
-          <p>Техническая поддержка</p>
-          <h1>GEDPOOL31</h1>
-        </div>
-        <div class="GEDPOOL31_whatjob">
-          <img src="@/assets/icons-developcard/tech-support.svg" alt="html">
-          <p>Tech-Support</p>
-        </div>
-        <div class="GEDPOOL31_icons">
-          <a href="https://t.me/GEDPOOL31" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://discord.com/users/1044186204884701227" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
         </div>
       </div>
-      <div class="GEDPOOL31_skin">
-        <img src="https://avatars.spworlds.ru/frontbust/GEDPOOL31?w=256" alt="">
-        </div>
-    </div>
-    <div class="busha888_card">
-      <div class="text">
-        <div class="aboutinfo">
-          <p>Фронтэндер</p>
-          <h1>Madara0330H</h1>
-        </div>
-        <div class="whatjob">
-          <img src="@/assets/icons-developcard/html.png" alt="html">
-          <p>HTML 5, CSS</p>
-        </div>
-        <div class="icons">
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img src="@/assets/icons-developcard/odniclasniki.png" alt=""></a>
-          <a href="https://t.me/Slayyyyyyyyyyyyyyyyy" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://www.youtube.com/" target="_blank" ><img src="@/assets/icons-developcard/like.png" alt=""></a>
-          <a href="https://github.com/Madara0330E" target="_blank" ><img src="@/assets/icons-developcard/github.png" alt=""></a>
-        </div>
-      </div>
-      <div class="skin">
-        <img src="https://avatars.spworlds.ru/frontbust/Madara0330H?w=256" alt="">
-        </div>
-    </div>
-    <div class="CLARFFY_card">
-      <div class="CLARFFY_text">
-        <div class="CLARFFY_aboutinfo">
-          <p>Дизайнер</p>
-          <h1>CLARFFY</h1>
-        </div>
-        <div class="CLARFFY_whatjob">
-          <img src="@/assets/icons-developcard/Figma.png" alt="html">
-          <p>Designer</p>
-        </div>
-        <div class="CLARFFY_icons">
-          <a href="https://t.me/LDpoko" target="_blank" ><img src="@/assets/icons-developcard/telegram.png" alt=""></a>
-          <a href="https://discordapp.com/users/784873585852284938" target="_blank" ><img src="@/assets/icons-developcard/discord.png" alt=""></a>
-        </div>
-      </div>
-      <div class="CLARFFY_skin">
-        <img src="https://avatars.spworlds.ru/frontbust/CLARFFY?w=256" alt="">
-        </div>
     </div>
   </div>
-  </div>
-
 </template>
 
 <script>
