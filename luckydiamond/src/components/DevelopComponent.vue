@@ -1,7 +1,7 @@
 <template>
   <div class="info">
     <div class="top_card">
-      <div class="Gobnik_card" style="border: 3px solid gold; box-shadow: 0 0 25px gold; padding: 20px; border-radius: 20px; background: #111;">
+      <div class="Gobnik_card" style="border: 3px solid gold; box-shadow: 0 0 25px gold; padding: 20px; border-radius: 20px; background: #111;display: none;">
         <div class="Gobnik_text_2" style="color: white;">
           <div class="Gobnik_aboutinfo_2" style="margin-bottom: 20px;">
             <p style="font-size: 20px; color: gold;">👑 ГЛАВА ВСЕГО | ЛЕГЕНДА | БОГ КОДА</p>
