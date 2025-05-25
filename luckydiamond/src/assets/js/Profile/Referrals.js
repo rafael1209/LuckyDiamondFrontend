@@ -54,7 +54,7 @@ const requestOptions = {
   redirect: "follow"
 };
 
-fetch("https://casino.chasman.engineer/api/PromoCode/TakeMoneyReferral", requestOptions)
+fetch("https://casino-api.chasman.engineer/api/PromoCode/TakeMoneyReferral", requestOptions)
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
